@@ -109,6 +109,7 @@ module Mapi
 
   		str = ''
   		@headers.each do |key, vals|
+        vals = vals.split if vals.kind_of?(String)
   			vals.each { |val| str << "#{key}: #{val}\r\n" }
   		end
   		str << "\r\n" + @body
